@@ -3286,6 +3286,18 @@ body.finale-particles .finale-fallback {
   opacity: .85;
 }
 
+.footer-fine .footer-phone {
+  color: var(--gold, #E7C887);
+  opacity: 1;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(231, 200, 135, .5);
+  transition: opacity .25s ease;
+}
+
+.footer-fine .footer-phone:hover {
+  opacity: .75;
+}
+
 .footer .btn--gold {
   background: #ffffff;
   color: #520C17;
