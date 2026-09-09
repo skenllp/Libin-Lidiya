@@ -468,3 +468,47 @@ img.section-bg{
   margin: 0 auto;
   max-width: 480px;
 }
+
+/* ---- Hero CTA (scroll to invitation) ---- */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin-top: 2rem;
+  padding: .7rem 2rem .7rem 2.2rem;
+  border: 1.5px solid rgba(216, 193, 154, .55);
+  border-radius: 60px;
+  color: #FFFDF9;
+  font-family: var(--f-body, sans-serif);
+  font-size: .85rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  background: rgba(216, 193, 154, .08);
+  transition: background .35s ease, border-color .35s ease, transform .35s ease, box-shadow .35s ease;
+  cursor: pointer;
+}
+
+.hero-cta:hover,
+.hero-cta:focus-visible {
+  background: rgba(216, 193, 154, .18);
+  border-color: rgba(216, 193, 154, .85);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(216, 193, 154, .18);
+  outline: none;
+}
+
+.hero-cta__text {
+  pointer-events: none;
+}
+
+.hero-cta__arrow {
+  flex-shrink: 0;
+  animation: hero-cta-bounce 2s ease-in-out infinite;
+}
+
+@keyframes hero-cta-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(4px); }
+}
