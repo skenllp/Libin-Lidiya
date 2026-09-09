@@ -1035,21 +1035,22 @@ body:not(.is-revealed) #site * {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  color: var(--brown);
+  color: #ffffff;
 }
 
 .scroll-indicator__word {
   font-size: 9.5px;
   letter-spacing: .36em;
   text-transform: uppercase;
-  opacity: .72
+  opacity: .85;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .6);
 }
 
 .scroll-indicator__rail {
   position: relative;
   width: 1px;
   height: 52px;
-  background: linear-gradient(180deg, rgba(122, 92, 67, .5), transparent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .6), transparent);
   overflow: visible;
 }
 
@@ -1061,8 +1062,8 @@ body:not(.is-revealed) #site * {
   height: 5px;
   margin-left: -2.5px;
   border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 10px rgba(193, 150, 47, .9);
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, .9);
   animation: scrollDot 2.4s var(--ease-soft) infinite;
 }
 
