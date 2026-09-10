@@ -18,6 +18,7 @@
   var COVER_FADE_MS = 420;
   var READY_TIMEOUT_MS = 10000;
   var PLAY_SAFETY_MS = 14000;
+  var SKIP_DELAY_MS = 2000;
 
   /* ---------------------------------------------------------
      0 · Ambient audio  ·  disc control + play after cover open
@@ -160,6 +161,7 @@
   var finished = false;
   var safety = 0;
   var readyWait = 0;
+  var skipTimer = 0;
 
   function markVideoReady() {
     videoReady = true;
@@ -326,6 +328,7 @@
     finished = true;
     clearTimeout(safety);
     clearTimeout(readyWait);
+    clearTimeout(skipTimer);
 
     /* Freeze the last frame so the visitor never sees black while Hero decodes */
     try {
@@ -407,7 +410,7 @@
       if (!coverLifted && !finished) liftCover();
     }, 900);
 
-    setTimeout(function () { if (!finished && skipBtn) skipBtn.hidden = false; }, 5000);
+    skipTimer = setTimeout(function () { if (!finished && skipBtn) skipBtn.hidden = false; }, SKIP_DELAY_MS);
 
     safety = setTimeout(function () {
       if (!finished && (video.readyState < 2 || video.paused)) finishReveal();
